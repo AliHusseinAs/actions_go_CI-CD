@@ -8,4 +8,6 @@ func main() {
 	for i := 1; i < 4; i++ {
 		fmt.Printf("Message from Go: %d", i)
 	}
+
+	qndkjvdfnvkdsfvdfvnk
 }
