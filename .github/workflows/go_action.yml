@@ -23,4 +23,16 @@ jobs:
               run: chmod +x ./code.sh 
             - name: read shell file 
               run: ./code.sh
+    job_three:
+        needs: [job_one, job_two]
+        runs-on: ubuntu-latest
 
+        steps:
+            - name: clone
+              uses: actions/checkout@v5
+            - name: set Go env
+              uses: actions/setup-go@v6
+              with:
+                go-version: '^1.23.1'
+            - name: Run Go code 
+              run: go run ./assets/code_one.go
