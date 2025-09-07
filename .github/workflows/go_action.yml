@@ -1,0 +1,26 @@
+name: Go Workflows
+
+on: push
+
+jobs:
+    job_one:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: clone all files in the repo
+              uses: actions/checkout@v5
+            - name: test from VS code
+              run: echo "Running from VSCODE working..."
+    
+    job_two:
+        needs: job_one
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: clone 
+              uses: actions/checkout@v5
+            - name: give permissions 
+              run: chmod +x ./code.sh 
+            - name: read shell file 
+              run: ./code.sh
+
